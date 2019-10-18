@@ -16,6 +16,10 @@ export class Display {
     
     generate() {
         console.log('generate');
+        let scale = Math.random();
+
+        console.log('scale: ', scale);
+
         let perlin = this.perlin.generate(this.size, 24);
         this.viewport = new Viewport(this.perlinUI,perlin);
         this.viewport.display();

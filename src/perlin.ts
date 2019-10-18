@@ -14,8 +14,9 @@ export class Perlin {
         this.permutation = this.grid.generateRandomArray(0,256);
     }
 
-    generate(size: number, z: number = 0, scale: number = 0.0401) {
+    generate(size: number, z: number = 0, scale: number = 0.0431) {
         let grid: number[][] = [];
+        let randomScale = false;
 
         for(let row = 0; row < size; row++) {
             let r = [];
