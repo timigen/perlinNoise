@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Numbers = /** @class */ (function () {
     function Numbers() {
     }
@@ -17,4 +19,4 @@ var Numbers = /** @class */ (function () {
     };
     return Numbers;
 }());
-export { Numbers };
+exports.Numbers = Numbers;
