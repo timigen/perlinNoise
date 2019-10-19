@@ -1,11 +1,11 @@
 {
   "name": "perlinnoise",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build-dev": "webpack --mode=development",
-    "build": "webpack --mode=production",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/timigen/perlinNoise#readme",
   "devDependencies": {
-    "ts-loader": "^6.2.0",
     "typescript": "^3.6.4"
   }
 }
