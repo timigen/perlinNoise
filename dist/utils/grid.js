@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var numbers_1 = require("./numbers");
-var Grid = /** @class */ (function () {
+var Grid = (function () {
     function Grid(size) {
         this.size = size;
     }

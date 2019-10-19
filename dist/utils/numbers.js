@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Numbers = /** @class */ (function () {
+var Numbers = (function () {
     function Numbers() {
     }
     Numbers.largest = function (a, b) {

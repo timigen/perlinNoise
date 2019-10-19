@@ -4,6 +4,7 @@
       "noImplicitAny": false,
       "module": "commonjs",
       "declaration": true,
-      "target": "es5"
+      "target": "es5",
+      "removeComments": true
     }
   }
