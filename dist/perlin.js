@@ -1,4 +1,6 @@
-import { Grid } from './utils/grid';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var grid_1 = require("./utils/grid");
 var Perlin = /** @class */ (function () {
     function Perlin(size, multiplier) {
         if (multiplier === void 0) { multiplier = 0.0431; }
@@ -6,7 +8,7 @@ var Perlin = /** @class */ (function () {
         this.p = [];
         this.size = size;
         this.multiplier = multiplier;
-        this.grid = new Grid(this.size);
+        this.grid = new grid_1.Grid(this.size);
         this.permutation = this.grid.generateRandomArray(0, 256);
     }
     Perlin.prototype.generate2D = function (z) {
@@ -45,4 +47,4 @@ var Perlin = /** @class */ (function () {
     Perlin.prototype.scale = function (n) { return (1 + n) / 2; };
     return Perlin;
 }());
-export { Perlin };
+exports.Perlin = Perlin;

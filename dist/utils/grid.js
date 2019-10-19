@@ -1,4 +1,6 @@
-import { Numbers } from './numbers';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var numbers_1 = require("./numbers");
 var Grid = /** @class */ (function () {
     function Grid(size) {
         this.size = size;
@@ -6,7 +8,7 @@ var Grid = /** @class */ (function () {
     Grid.prototype.generateRandomArray = function (minimum, maximum) {
         var arr = [];
         for (var row = 0; row < this.size; row++) {
-            var num = Numbers.getRandomInt(minimum, maximum);
+            var num = numbers_1.Numbers.getRandomInt(minimum, maximum);
             arr.push(num);
         }
         return arr;
@@ -16,7 +18,7 @@ var Grid = /** @class */ (function () {
         for (var row = 0; row < this.size; row++) {
             var newRow = [];
             for (var col = 0; col < this.size; col++) {
-                var num = Numbers.getRandomInt(minimum, maximum);
+                var num = numbers_1.Numbers.getRandomInt(minimum, maximum);
                 newRow.push(num);
             }
             grid.push(newRow);
@@ -25,4 +27,4 @@ var Grid = /** @class */ (function () {
     };
     return Grid;
 }());
-export { Grid };
+exports.Grid = Grid;
