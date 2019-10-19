@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var grid_1 = require("./utils/grid");
-var Perlin = /** @class */ (function () {
+var Perlin = (function () {
     function Perlin(size, multiplier) {
         if (multiplier === void 0) { multiplier = 0.0431; }
         this.permutation = [];
