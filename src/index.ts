@@ -3,25 +3,27 @@ import { Grid } from './utils/grid';
 export class Perlin {
     private grid: Grid;
     private size: number;
+    private multiplier: number;
 
     private readonly permutation = [];
 
     private p: number[] = [];
 
-    constructor(size:number) {
+    constructor(size:number, multiplier: number = 0.0431) {
         this.size = size;
+        this.multiplier = multiplier;
         this.grid = new Grid(this.size);
         this.permutation = this.grid.generateRandomArray(0,256);
     }
 
-    generate(size: number, z: number = 0, scale: number = 0.0431) {
+    generate2D(z: number = 0) {
         let grid: number[][] = [];
         let randomScale = false;
 
-        for(let row = 0; row < size; row++) {
+        for(let row = 0; row < this.size; row++) {
             let r = [];
-            for(let column = 0; column < size; column++) {
-                let perlin = this.noise(column*scale, row*scale, z*scale);
+            for(let column = 0; column < this.size; column++) {
+                let perlin = this.noise(column * this.multiplier, row * this.multiplier, z * this.multiplier);
 
                 r.push(perlin);
             }
