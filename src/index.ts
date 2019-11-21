@@ -1,1 +1,1 @@
-export { Perlin } from './perlin';
+export { Perlin } from './perlin'
