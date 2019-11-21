@@ -1,4 +1,2 @@
 # perlinNoise
 
-`npm run build`
-

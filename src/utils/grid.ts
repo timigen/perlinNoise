@@ -7,33 +7,34 @@ export class Grid {
         this.size = size;
     }
 
-    public generateRandomArray(minimum: number, maximum: number) {
-        const arr: number[] = [];
-
-        for (let row = 0; row < this.size; row++) {
-            const num = Numbers.getRandomInt(minimum, maximum);
+    generateRandomArray(minimum:number, maximum: number) {
+        let arr: number[] = [];
+        
+        for( let row = 0; row < this.size; row++ ) {
+            let num = Numbers.getRandomInt(minimum, maximum);
 
             arr.push(num);
         }
 
         return arr;
     }
-
-    public generateRandom(minimum: number, maximum: number): number[][] {
-
-        const grid: number[][] = [];
-
-        for (let row = 0; row < this.size; row++) {
-            const newRow = [];
-            for (let col = 0; col < this.size; col++) {
-
-                const num = Numbers.getRandomInt(minimum, maximum);
+    
+    generateRandom(minimum:number, maximum: number): number[][] {
+    
+        let grid: number[][] = [];
+        
+        
+        for( let row = 0; row < this.size; row++ ) {
+            let newRow = [];
+            for( let col = 0; col < this.size; col++) {
+    
+                let num = Numbers.getRandomInt(minimum, maximum);
 
                 newRow.push(num);
             }
             grid.push(newRow);
         }
-
+    
         return grid;
     }
 }
