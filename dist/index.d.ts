@@ -1,0 +1,1 @@
+export { Perlin } from './perlin';
