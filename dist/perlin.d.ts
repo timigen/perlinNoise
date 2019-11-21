@@ -6,9 +6,9 @@ export declare class Perlin {
     private p;
     constructor(size: number, multiplier?: number);
     generate2D(z?: number): number[][];
-    noise(x: number, y: number, z: number): number;
-    fade(t: any): number;
-    lerp(t: any, a: any, b: any): any;
-    grad(hash: any, x: any, y: any, z: any): any;
-    scale(n: any): number;
+    private noise;
+    private fade;
+    private lerp;
+    private grad;
+    private scale;
 }
