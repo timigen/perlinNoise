@@ -1,7 +1,7 @@
 import { Grid } from './utils/grid';
 
 export class Perlin {
-  private grid: Grid;
+  private rng: Grid;
   private size: number;
   private multiplier: number;
 
@@ -12,16 +12,15 @@ export class Perlin {
   constructor(size: number, multiplier: number = 0.0431) {
     this.size = size;
     this.multiplier = multiplier;
-    this.grid = new Grid(this.size);
-    this.permutation = this.grid.generateRandomArray(0, 256);
+    this.rng = new Grid(this.size);
+    this.permutation = this.rng.generateRandomArray(0, 256);
   }
 
-  generate2D(z: number = 0) {
+  public generate2D(z: number = 0) {
     let grid: number[][] = [];
-    let randomScale = false;
 
     for (let row = 0; row < this.size; row++) {
-      let r = [];
+      const r = [];
       for (let column = 0; column < this.size; column++) {
         let perlin = this.noise(
           column * this.multiplier,
@@ -37,7 +36,7 @@ export class Perlin {
     return grid;
   }
 
-  noise(x: number, y: number, z: number) {
+  private noise(x: number, y: number, z: number) {
     this.p = new Array(512);
 
     for (var i = 0; i < 256; i++)
@@ -92,22 +91,22 @@ export class Perlin {
     );
   }
 
-  fade(t) {
+  private fade(t) {
     return t * t * t * (t * (t * 6 - 15) + 10);
   }
 
-  lerp(t, a, b) {
+  private lerp(t, a, b) {
     return a + t * (b - a);
   }
 
-  grad(hash, x, y, z) {
+  private grad(hash, x, y, z) {
     var h = hash & 15;
     var u = h < 8 ? x : y,
       v = h < 4 ? y : h == 12 || h == 14 ? x : z;
     return ((h & 1) == 0 ? u : -u) + ((h & 2) == 0 ? v : -v);
   }
 
-  scale(n) {
+  private scale(n) {
     return (1 + n) / 2;
   }
 }

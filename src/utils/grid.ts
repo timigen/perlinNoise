@@ -7,11 +7,11 @@ export class Grid {
     this.size = size;
   }
 
-  generateRandomArray(minimum: number, maximum: number) {
-    let arr: number[] = [];
+  public generateRandomArray(minimum: number, maximum: number) {
+    const arr: number[] = [];
 
     for (let row = 0; row < this.size; row++) {
-      let num = Numbers.getRandomInt(minimum, maximum);
+      const num = Numbers.getRandomInt(minimum, maximum);
 
       arr.push(num);
     }
@@ -19,13 +19,16 @@ export class Grid {
     return arr;
   }
 
-  generateRandom(minimum: number, maximum: number): number[][] {
-    let grid: number[][] = [];
+  public generateRandom(
+    minimum: number,
+    maximum: number,
+  ): number[][] {
+    const grid: number[][] = [];
 
     for (let row = 0; row < this.size; row++) {
-      let newRow = [];
+      const newRow = [];
       for (let col = 0; col < this.size; col++) {
-        let num = Numbers.getRandomInt(minimum, maximum);
+        const num = Numbers.getRandomInt(minimum, maximum);
 
         newRow.push(num);
       }
