@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/timigen/perlinNoise#readme",
   "devDependencies": {
+    "prettier": "1.19.1",
     "typescript": "^3.6.4"
   }
 }
