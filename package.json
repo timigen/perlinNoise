@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "format": "prettier --check 'src/**/*.ts'",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/timigen/perlinNoise#readme",
   "devDependencies": {
+    "prettier": "1.19.1",
     "typescript": "^3.6.4"
   }
 }
