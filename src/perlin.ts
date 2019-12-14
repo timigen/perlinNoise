@@ -1,26 +1,32 @@
 import { Arrays } from 'utils';
 
 export class Perlin {
-  private size: number;
+  private rows: number;
+  private cols: number;
   private multiplier: number;
 
   private readonly permutation = [];
 
   private p: number[] = [];
 
-  constructor(size: number, multiplier: number = 0.0431) {
-    this.size = size;
+  constructor(
+    rows: number,
+    cols: number,
+    multiplier: number = 0.0431,
+  ) {
+    this.rows = rows;
+    this.cols = cols;
     this.multiplier = multiplier;
-    this.permutation = Arrays.getRandomlySeeded(this.size, 0, 256);
+    this.permutation = Arrays.getRandomlySeeded(this.cols, 0, 256);
   }
 
-  public generate2D() {
+  public generate2D(): number[][] {
     let z = 0;
     let grid: number[][] = [];
 
-    for (let row = 0; row < this.size; row++) {
+    for (let row = 0; row < this.rows; row++) {
       const r = [];
-      for (let column = 0; column < this.size; column++) {
+      for (let column = 0; column < this.cols; column++) {
         let perlin = this.noise(
           column * this.multiplier,
           row * this.multiplier,

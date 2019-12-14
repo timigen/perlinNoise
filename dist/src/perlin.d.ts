@@ -1,9 +1,10 @@
 export declare class Perlin {
-    private size;
+    private rows;
+    private cols;
     private multiplier;
     private readonly permutation;
     private p;
-    constructor(size: number, multiplier?: number);
+    constructor(rows: number, cols: number, multiplier?: number);
     generate2D(): number[][];
     private noise;
     private fade;

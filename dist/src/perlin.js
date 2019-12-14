@@ -2,19 +2,20 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const utils_1 = require("utils");
 class Perlin {
-    constructor(size, multiplier = 0.0431) {
+    constructor(rows, cols, multiplier = 0.0431) {
         this.permutation = [];
         this.p = [];
-        this.size = size;
+        this.rows = rows;
+        this.cols = cols;
         this.multiplier = multiplier;
-        this.permutation = utils_1.Arrays.getRandomlySeeded(this.size, 0, 256);
+        this.permutation = utils_1.Arrays.getRandomlySeeded(this.cols, 0, 256);
     }
     generate2D() {
         let z = 0;
         let grid = [];
-        for (let row = 0; row < this.size; row++) {
+        for (let row = 0; row < this.rows; row++) {
             const r = [];
-            for (let column = 0; column < this.size; column++) {
+            for (let column = 0; column < this.cols; column++) {
                 let perlin = this.noise(column * this.multiplier, row * this.multiplier, z * this.multiplier);
                 r.push(perlin);
             }
