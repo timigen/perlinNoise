@@ -5,9 +5,13 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "format": "prettier --check 'src/**/*.ts'",
+    "format": "prettier --write ./src/*.ts && prettier --write ./specs/*.spec.ts",
+    "lint": "tslint --project tsconfig.json",
+    "qc": "npm run format && npm run lint && npm run coverage",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-prd": "npm run qc && npm run build",
+    "test": "mocha -r ts-node/register specs/*.spec.ts --exit",
+    "coverage": "nyc --reporter=html --reporter=lcov --reporter=text-summary -e .ts -x \"specs/*.spec.ts\" npm run test"
   },
   "repository": {
     "type": "git",
@@ -20,7 +24,17 @@
   },
   "homepage": "https://github.com/timigen/perlinNoise#readme",
   "devDependencies": {
-    "prettier": "1.19.1",
-    "typescript": "^3.6.4"
+    "@types/chai": "^4.2.6",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "utils": "timigen/utils#master"
   }
 }
