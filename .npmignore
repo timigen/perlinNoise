@@ -1,4 +1,6 @@
+coverage/
 src/
+specs/
 
 README.md
-package.json
+*.json

@@ -4,7 +4,7 @@ export declare class Perlin {
     private readonly permutation;
     private p;
     constructor(size: number, multiplier?: number);
-    generate2D(z?: number): number[][];
+    generate2D(): number[][];
     private noise;
     private fade;
     private lerp;

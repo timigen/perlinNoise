@@ -14,7 +14,8 @@ export class Perlin {
     this.permutation = Arrays.getRandomlySeeded(this.size, 0, 256);
   }
 
-  public generate2D(z: number = 0) {
+  public generate2D() {
+    let z = 0;
     let grid: number[][] = [];
 
     for (let row = 0; row < this.size; row++) {

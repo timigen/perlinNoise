@@ -9,7 +9,8 @@ class Perlin {
         this.multiplier = multiplier;
         this.permutation = utils_1.Arrays.getRandomlySeeded(this.size, 0, 256);
     }
-    generate2D(z = 0) {
+    generate2D() {
+        let z = 0;
         let grid = [];
         for (let row = 0; row < this.size; row++) {
             const r = [];
