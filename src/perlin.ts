@@ -51,9 +51,11 @@ export class Perlin {
     let X = Math.floor(x) & 255,
       Y = Math.floor(y) & 255,
       Z = Math.floor(z) & 255;
+
     x -= Math.floor(x);
     y -= Math.floor(y);
     z -= Math.floor(z);
+
     let u = this.fade(x),
       v = this.fade(y),
       w = this.fade(z);
