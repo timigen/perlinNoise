@@ -33,7 +33,7 @@ export class Perlin {
           z * this.multiplier,
         );
 
-        r.push(perlin);
+        r.push(Math.floor(perlin * 100));
       }
       grid.push(r);
     }

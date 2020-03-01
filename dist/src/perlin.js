@@ -17,7 +17,7 @@ class Perlin {
             const r = [];
             for (let column = 0; column < this.cols; column++) {
                 let perlin = this.noise(column * this.multiplier, row * this.multiplier, z * this.multiplier);
-                r.push(perlin);
+                r.push(Math.floor(perlin * 100));
             }
             grid.push(r);
         }
