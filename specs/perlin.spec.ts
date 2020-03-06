@@ -2,8 +2,8 @@ import { expect } from 'chai';
 
 import { Perlin } from '../src/perlin';
 
-const cols = 100;
-const rows = 100;
+const cols = 200;
+const rows = 200;
 
 describe('Perlin', () => {
   describe(`new Perlin(${rows}, ${cols})`, () => {
@@ -23,7 +23,7 @@ describe('Perlin', () => {
 
     const grid = new Perlin(rows, cols).generate2D();
 
-    it(`not null`, () => {
+    it(`grid.length not null`, () => {
       expect(grid.length).not.equal(null);
     });
 
@@ -59,6 +59,22 @@ describe('Perlin', () => {
       grid.forEach(row => {
         row.forEach(target => {
           expect(Number.isInteger(target)).to.equal(true);
+        });
+      });
+    });
+
+    it(`grid contains whole numbers greater than zero`, () => {
+      grid.forEach(row => {
+        row.forEach(target => {
+          expect(target).to.be.greaterThan(0);
+        });
+      });
+    });
+
+    it(`grid contains whole numbers less than 101`, () => {
+      grid.forEach(row => {
+        row.forEach(target => {
+          expect(target).to.be.lessThan(101);
         });
       });
     });
