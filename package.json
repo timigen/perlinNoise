@@ -1,6 +1,6 @@
 {
   "name": "perlinnoise",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,7 +32,7 @@
     "prettier": "^1.19.1",
     "ts-node": "^8.5.4",
     "tslint": "^5.20.1",
-    "typescript": "^3.7.3"
+    "typescript": "^4.9.5"
   },
   "dependencies": {
     "utils": "timigen/utils#master"
