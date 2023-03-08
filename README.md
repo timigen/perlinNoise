@@ -1,3 +1,3 @@
 # perlinNoise
 
-return an array of arrays of numbers from 0 to 100
+Typescript port of Perlin noise algorithm, a type of gradient noise developed by Ken Perlin in 1983.

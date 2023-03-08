@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Perlin = void 0;
 const utils_1 = require("utils");
 class Perlin {
     constructor(rows, cols, multiplier = 0.0431) {
