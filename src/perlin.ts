@@ -1,4 +1,4 @@
-import { Arrays } from 'utils';
+import { Arrays } from 'ts-utils';
 
 export class Perlin {
   private rows: number;

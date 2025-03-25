@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
+      "rootDir": "./src",
       "outDir": "./dist/",
       "noImplicitAny": false,
-      "module": "commonjs",
+      "module": "ESNext",
+      "moduleResolution": "node",
       "declaration": true,
       "target": "es6",
       "removeComments": true,
@@ -17,7 +19,7 @@
   },
   "include": [
     "src/**/*.ts",
-    "index.ts"
+    "src/index.ts"
   ],
   "exclude": [
     "specs/*.spec.ts"
