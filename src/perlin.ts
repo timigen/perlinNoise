@@ -99,22 +99,22 @@ export class Perlin {
     );
   }
 
-  private fade(t) {
+  private fade(t: number): number {
     return t * t * t * (t * (t * 6 - 15) + 10);
   }
 
-  private lerp(t, a, b) {
+  private lerp(t: number, a: number, b: number): number {
     return a + t * (b - a);
   }
 
-  private grad(hash, x, y, z) {
+  private grad(hash: number, x: number, y: number, z: number): number {
     let h = hash & 15;
     let u = h < 8 ? x : y,
       v = h < 4 ? y : h == 12 || h == 14 ? x : z;
     return ((h & 1) == 0 ? u : -u) + ((h & 2) == 0 ? v : -v);
   }
 
-  private scale(n) {
+  private scale(n: number): number {
     return (1 + n) / 2;
   }
 }
